@@ -1,0 +1,49 @@
+<div class="container">
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+
+    <a class="navbar-brand" href="#">
+      <img
+        src="assets/image/logo.png"
+        height="20"
+        alt=""
+        loading="lazy"
+      />
+    </a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" (click)="Accueil()">Accueil <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="Presentation()">Présentation</a>
+        </li>
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produits</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown08">
+            <a class="dropdown-item" (click)="produits('modulesolaire')">Module solaire photovoltaïque</a>
+            <a class="dropdown-item" (click)="produits('onduleurs')">Onduleurs solaires</a>
+            <a class="dropdown-item" (click)="produits('regulateur')">Régulateur de charge</a>
+            <a class="dropdown-item" (click)="produits('pompes')">Pompes Solaires</a>
+            <a class="dropdown-item" (click)="produits('lampes')">Lampes Solaires</a>
+            <a class="dropdown-item" (click)="produits('batteries')">Batteries Solaires</a>
+          </div>
+        </li>
+
+        <li class="nav-item active" >
+          <a class="nav-link " (click)="Contact()">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</div>
