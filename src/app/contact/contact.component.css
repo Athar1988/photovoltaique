@@ -4,12 +4,7 @@ h4 {
   color: #1f5c99;
 }
 
-.titleline {
-  position: relative;
-  max-width: 100%;
-  border-top: 1px solid #feb41c !important;
-  margin: 0 auto 15px 0;
-}
+
 
 h5 {
   font-size: 14px;
