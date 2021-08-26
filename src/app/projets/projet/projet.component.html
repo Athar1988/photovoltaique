@@ -1,0 +1,30 @@
+<div class="container" >
+  <div class="row">
+    <div class="col-md-sm-lg-3 ">
+      <img src="assets/image/post_img_small.jpg" alt="" class="img-responsive frame" height="350px">
+    </div>
+
+  <div class="col-md-9 col-sm-9">
+    <h3 class="section_title">{{tousLesProjet[0].type}}</h3>
+    <div class="titleline"></div>
+
+  <div class="card-group vgr-cards">
+    <div  *ngFor="let projet of tousLesProjet">
+      <div class="card">
+        <div class="card-img-body">
+          <img class="card-img" src="assets/projet/{{projet.image}}" alt="Card image cap" >
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{projet.titre}}</h4>
+          <p class="card-text">{{projet.description}}</p>
+          <button class="btn mb-3 mr-3 btn-warning" *ngIf="token!= null"><span>Supprimer</span></button>
+        </div>
+      </div>
+      <div> <br></div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
