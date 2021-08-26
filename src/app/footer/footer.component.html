@@ -1,12 +1,12 @@
 <footer id="footer">
   ﻿		   <div class="container">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <!--<div class="footer-tooltip">Solar Power Company
              <div class="footer-tooltip-arrow"></div>
            </div>-->
       <div class="footer-about clearfix">
-        <h4>Présentation</h4>
+        <h4 style="color: #d39e00;">Présentation</h4>
         <div class="titleline-footer"></div>
         <p><b>Solar Power Company</b> est une entreprise 100% Tunisienne spécialisé dans le photovoltaïque fondé en 2013 .</p>
         <ul style="padding-left:13px;">
@@ -23,90 +23,38 @@
       </div></div>
     <!-- end .col-md-3 -->
 
-    <div class="col-md-3">
-      <h4>Produits</h4>
+    <div class="col-md-4">
+      <h4 style="color: #d39e00;">Produits</h4>
 
       <div class="titleline-footer"></div>
       <!-- end .titleline-footer -->
       <ul class="footer-list">
-        <li><i class="fa fa-chevron-circle-right"></i><a href="module-photovoltaique.php">Module Solaire Photovoltaique </a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="onduleur-solaire.php">Onduleurs Solaire </a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="regulateur-de-charge.php">Régulateurs de charge</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="pompe-solaire.php">Pompes Solaires</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="lampe-solaire.php">Lampes Solaires</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="batterie-solaire.php">Batteries Solaires </a></li>
+        <li><a  (click)="produits('modulesolaire')">Module Solaire Photovoltaique </a></li>
+        <li><a  (click)="produits('onduleurs')">Onduleurs Solaire </a></li>
+        <li><a  (click)="produits('regulateur')">Régulateurs de charge</a></li>
+        <li><a  (click)="produits('pompes')">Pompes Solaires</a></li>
+        <li><a  (click)="produits('lampes')">Lampes Solaires</a></li>
+        <li><a  (click)="produits('batteries')">Batteries Solaires </a></li>
       </ul>
     </div>
-    <div class="col-md-3">
-      <h4>Téléchargements</h4>
+    <div class="col-md-4">
+      <h4 style="color: #d39e00;">Téléchargements</h4>
       <div class="titleline-footer"></div>
 
       <ul class="footer-list">
-        <li><i class="fa fa-chevron-circle-right"></i><a href="fiche_technique_photovoltaique/brochure.pdf" target="_blanc">Notre Brochure</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="fiche_technique_photovoltaique/Formulaire-STEG-1-KWC.pdf" target="_blanc">Formulaire STEG 1 KWC</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="fiche_technique_photovoltaique/Formulaire-STEG-2-KWC.pdf" target="_blanc">Formulaire STEG 2 KWC</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="fiche_technique_photovoltaique/Formulaire-STEG-3-KWC.pdf" target="_blanc">Formulaire STEG 3 KWC</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="fiche_technique_photovoltaique/Formulaire-STEG-4-KWC.pdf" target="_blanc">Formulaire STEG 4 KWC</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="fiche_technique_photovoltaique/Contrat-avec-credit-STEG.pdf" target="_blanc">Contrat avec crédit</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="fiche_technique_photovoltaique/Contrat-sans-credit-STEG.pdf" target="_blanc">Contrat sans crédit</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="fiche_technique_photovoltaique/Pompage.pdf" target="_blanc">Formulaire Pompage</a></li>
-        <li><i class="fa fa-chevron-circle-right"></i><a href="fiche_technique_photovoltaique/Photovoltaique.pdf" target="_blanc">Formulaire Eclairage Hors Réseau</a></li>
+        <li><a href="fiche_technique_photovoltaique/brochure.pdf" target="_blanc">Notre Brochure</a></li>
+        <li><a href="fiche_technique_photovoltaique/Formulaire-STEG-1-KWC.pdf" target="_blanc">Formulaire STEG 1 KWC</a></li>
+        <li><a href="fiche_technique_photovoltaique/Formulaire-STEG-2-KWC.pdf" target="_blanc">Formulaire STEG 2 KWC</a></li>
+        <li><a href="fiche_technique_photovoltaique/Formulaire-STEG-3-KWC.pdf" target="_blanc">Formulaire STEG 3 KWC</a></li>
+        <li><a href="fiche_technique_photovoltaique/Formulaire-STEG-4-KWC.pdf" target="_blanc">Formulaire STEG 4 KWC</a></li>
+        <li><a href="fiche_technique_photovoltaique/Contrat-avec-credit-STEG.pdf" target="_blanc">Contrat avec crédit</a></li>
+        <li><a href="fiche_technique_photovoltaique/Contrat-sans-credit-STEG.pdf" target="_blanc">Contrat sans crédit</a></li>
+        <li><a href="fiche_technique_photovoltaique/Pompage.pdf" target="_blanc">Formulaire Pompage</a></li>
+        <li><a href="fiche_technique_photovoltaique/Photovoltaique.pdf" target="_blanc">Formulaire Eclairage Hors Réseau</a></li>
       </ul>
 
 
-    </div> <div class="col-md-3">
-    <h4>Inscrivez-vous NewsLetter</h4>
-    <div class="titleline-footer"></div>
-    <div class="widget widget_newsletter form_section" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
-
-      <form id="news" class="cmxform" method="post" action="submit-newsletter.php" novalidate="novalidate">
-        <fieldset>
-          <button type="submit" class="btn-email button button_grey_light" data-type="submit"><i class="fa fa-envelope-o"></i></button>
-          <div class="wrapper">
-            <input type="email" placeholder="Entrer votre adresse email" id="email" name="email" class="new" required="" aria-required="true">
-          </div>
-        </fieldset>
-      </form>
-      <div id="message"></div>
     </div>
-    <div class="widget widget_social_icons clearfix sos" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
-      <ul>
-        <li class="facebook">
-          <span class="tooltip">Facebook</span>
-          <a href="https://www.facebook.com/pages/Solar-Power-Company/225623450968347">
-            <i class="fa fa-facebook"></i>
-          </a>
-        </li>
-        <li class="twitter">
-          <span class="tooltip">Twitter</span>
-          <a href="https://twitter.com/solarpowertunis">
-            <i class="fa fa-twitter"></i>
-          </a>
-        </li>
-        <li class="google_plus">
-          <span class="tooltip">Google+</span>
-          <a href="https://plus.google.com/u/0/+Solar-power-company/about">
-            <i class="fa fa-google-plus"></i>
-          </a>
-        </li>
-
-        <li class="youtube">
-          <span class="tooltip">Youtube</span>
-          <a href="#">
-            <i class="fa fa-youtube-play"></i>
-          </a>
-        </li>
-        <li class="envelope">
-          <span class="tooltip">Contact</span>
-          <a href="contact.php">
-            <i class="fa fa-envelope-o"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-
-  </div>
 
   </div>
   <!-- end .row -->

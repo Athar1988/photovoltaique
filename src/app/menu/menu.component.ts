@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {ProduitService} from '../services/produit.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,43 +8,20 @@ import {Router} from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  constructor(private router: Router) { }
+token;
+  constructor(private router: Router, private serviceProduit: ProduitService) { }
 
   ngOnInit(): void {
+    this.token=localStorage.getItem('token');
   }
 
-  Accueil() {
-    this.router.navigate(['/accueil']);
-  }
-
-  Presentation(){
-    this.router.navigate(['/presentation']);
-  }
-
-  Produits() {
-    this.router.navigate(['/produits']);
-
-  }
-
-  Contact() {
-    this.router.navigate(['/contact']);
-
-  }
-
-  photovoltaique() {
-
-  }
-
-  onduleurs() {
-
-  }
-
-  regulateur() {
-
-  }
 
   produits(produit: string) {
-    this.router.navigate(['/produits/'+produit]);
+    this.serviceProduit.produits(produit);
+  }
+
+  Projets(projet: string) {
+    console.log(projet);
+    this.serviceProduit.projets(projet);
   }
 }

@@ -1,35 +1,43 @@
 <div class="container">
+  <a class="navbar-brand" href="#">
+    <img
+      src="assets/image/logo.png"
+      height="50"
+      alt=""
+      loading="lazy"
+    />
+  </a>
+</div>
 
 
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-
-    <a class="navbar-brand" href="#">
-      <img
-        src="assets/image/logo.png"
-        height="20"
-        alt=""
-        loading="lazy"
-      />
-    </a>
-
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="fa fa-bars"></span> Menu
     </button>
 
-    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" (click)="Accueil()">Accueil <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" (click)="Presentation()">Présentation</a>
-        </li>
 
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produits</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown08">
+
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active"><a [routerLink]="['accueil']" routerLinkActive="active" class="nav-link">Accueil</a></li>
+        <li class="nav-item" routerLinkActive="active"><a [routerLink]="['presentation']" class="nav-link" routerLinkActive="active">Présentation</a></li>
+        <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projets</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown03">
+            <a class="dropdown-item" (click)="Projets('Industriel')">Industriel</a>
+            <a class="dropdown-item" (click)="Projets('Residentiel')">Résidentiel</a>
+            <a class="dropdown-item" (click)="Projets('PompageSolaire')">Pompage Solaire</a>
+            <a class="dropdown-item" (click)="Projets('Eclairagepublic')">Eclairage public</a>
+            <a class="dropdown-item" (click)="Projets('ParkingSolaire')">Parking Solaire</a>
+            <a class="dropdown-item" (click)="Projets('SiteIsolé')">Site Isolé</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" >
+          <a  class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produits</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
             <a class="dropdown-item" (click)="produits('modulesolaire')">Module solaire photovoltaïque</a>
             <a class="dropdown-item" (click)="produits('onduleurs')">Onduleurs solaires</a>
             <a class="dropdown-item" (click)="produits('regulateur')">Régulateur de charge</a>
@@ -39,11 +47,15 @@
           </div>
         </li>
 
-        <li class="nav-item active" >
-          <a class="nav-link " (click)="Contact()">Contact</a>
-        </li>
+
+        <li class="nav-item" routerLinkActive="active"><a [routerLink]="['contact']" class="nav-link">Contact</a></li>
+        <li class="nav-item" routerLinkActive="active" *ngIf="token!= null"><a *ngIf="token!= null"[routerLink]="['ajouteProjet']" class="nav-link">Ajouter projet</a></li>
+
       </ul>
     </div>
-  </nav>
 
-</div>
+
+  </div>
+</nav>
+<!-- END nav -->
+

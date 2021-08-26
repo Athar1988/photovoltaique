@@ -10,26 +10,108 @@
       <div class="col-md-6 col-sm-6">
         <h5><b>Solar Power Company </b>dispose d'un groupe d'installateurs qui couvrent tout le territoire tunisien. <br>Pour nous contacter merci de : <br> Remplir le formuliaire ci-joint:.</h5>
 <div>
-  <form id="commentForm" class="cmxform" method="post" action="submit-envoi.php" novalidate="novalidate">
+  <form #contactForm="ngForm" id="commentForm" class="cmxform" method="post" action="submit-envoi.php" novalidate="novalidate">
     <fieldset>
     <div class="form-group">
 
-      <label for="name">Nom</label>
-      <input id="name" name="name" minlength="2" type="text" class="form-control" placeholder="Nom" required="" aria-required="true">
 
+      <div>
+      <label for="nom">Nom</label>
+      <input
+        [(ngModel)]="nom"
+        type="text"
+        #nomInput="ngModel"
+        required
+        ngModel
+        id="nom"
+        name="nom"
+        minlength="3"
+        type="text"
+        class="form-control"
+        placeholder="nom"
+        required=""
+        aria-required="true"
+      >
+      <div
+        *ngIf="nomInput.invalid && nomInput.dirty"
+        class="alert alert-danger"
+      >
+        champs obligatoire et au moins 3 caractéres
+      </div>
+      </div>
+
+
+
+      <div>
       <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="name@example.com">
+      <input
+        [(ngModel)]="email"
+        type="email"
+        #emailInput="ngModel"
+        required
+        email
+        ngModel
+        name="email"
+        class="form-control"
+        id="email"
+        placeholder="name@example.com"
+      >
+      <div
+        *ngIf="emailInput.invalid && emailInput.dirty"
+        class="alert alert-danger"
+      >
+        L'email est obliogatoire et doit être correct
+      </div>
+      </div>
 
 
-
+    <div>
     <label for="objet">Objet</label>
-    <input id="objet" name="name" minlength="2" type="text" class="form-control" placeholder="Objet" required="" aria-required="true">
-
-      <label for="Message">Message</label>
-      <textarea class="form-control" id="Message" rows="3"></textarea>
+    <input
+      [(ngModel)]="objet"
+      type="text"
+      #objetInput="ngModel"
+      required
+      ngModel
+      id="objet"
+      name="objet"
+      minlength="2"
+      type="text"
+      class="form-control"
+      placeholder="objet"
+      required=""
+      aria-required="true">
     </div>
 
-    <input class="submit btn btn-white" name="submit" type="submit" value="Envoyer">
+
+      <div>
+      <label for="message">Message</label>
+      <textarea
+        [(ngModel)]="message"
+        type="text"
+        #messageInput="ngModel"
+        required
+        ngModel
+        class="form-control"
+        name="message"
+        id="message"
+        rows="3"
+        placeholder="message"
+      >
+
+      </textarea>
+    </div>
+
+
+    <input
+      (click)=" ajoutContact(contactForm.value)"
+      [disabled]="contactForm.invalid"
+      class="submit btn btn-white"
+      name="submit"
+      type="submit"
+      value="Envoyer"
+    >
+    </div>
     </fieldset>
   </form>
 </div>

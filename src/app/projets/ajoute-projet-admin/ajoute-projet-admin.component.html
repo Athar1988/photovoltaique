@@ -1,0 +1,119 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-justify">
+      <h3 class="section_title">  Ajouter service ou projet</h3>
+      <div class="titleline"></div>
+      <div class="col-md-6 col-sm-6">
+        <div>
+          <form #projetForm="ngForm" id="commentForm" class="cmxform" method="post" novalidate="novalidate">
+            <fieldset>
+              <div class="form-group">
+
+
+
+                <div class="input-group" for="type">
+                  <label class="label">Choisir un saisir</label>
+                  <div class="rs-select2 js-select-simple select--no-search">
+                    <select
+                      [(ngModel)]="type"
+                      class="form-control"
+                      id="type"
+                      #typeInput
+                      name="type"
+                      placeholder="choisir un saisir"
+                      required
+                      ngModel>
+                      <option disabled="disabled" selected="selected">choisir saisir</option>
+                      <option>Industriel</option>
+                      <option>Résidentiel</option>
+                      <option>Pompage Solaire</option>
+                      <option>Eclairage public</option>
+                      <option>Parking Solaire</option>
+                      <option>Site Isolé</option>
+                    </select>
+                    <div class="select-dropdown"></div>
+                  </div>
+                </div>
+
+
+
+                <div>
+                  <label for="titre">Titre</label>
+                  <input
+                    [(ngModel)]="titre"
+                    type="text"
+                    #titreInput="ngModel"
+                    required
+                    ngModel
+                    id="titre"
+                    name="titre"
+                    minlength="3"
+                    type="text"
+                    class="form-control"
+                    placeholder="titre"
+                    required=""
+                    aria-required="true"
+                  >
+                  <div
+                    *ngIf="titreInput.invalid && titreInput.dirty"
+                    class="alert alert-danger"
+                  >
+                    champs obligatoire et au moins 3 caractéres
+                  </div>
+                </div>
+
+
+
+                <div>
+                  <label for="description">Description</label>
+                  <textarea
+                    [(ngModel)]="description"
+                    type="text"
+                    #descriptionInput="ngModel"
+                    required
+                    ngModel
+                    class="form-control"
+                    name="description"
+                    id="description"
+                    rows="3"
+                    placeholder="description"
+                  >
+             </textarea>
+                </div>
+
+                <div>
+                  <label for="image">Image</label>
+                  <img
+                    [(ngModel)]="image"
+                    #imageInput="ngModel"
+                    required
+                    ngModel
+                    id="image"
+                    [src]="url" height="200"> <br/>
+                  <input type='file' (change)="onSelectFile($event)">
+
+                </div>
+
+                <input
+                  (click)=" ajoutSiasir(projetForm.value)"
+                  [disabled]="projetForm.invalid"
+                  class="submit btn btn-white"
+                  name="submit"
+                  type="submit"
+                  value="Envoyer"
+                >
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
