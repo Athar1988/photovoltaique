@@ -25,25 +25,25 @@ export class ProduitService {
 
   ajouterContact(contact: Contact): Observable<Contact> {
     console.log(contact);
-    return this.http.post<Contact>("http://localhost:8081/contacts", contact);
+    return this.http.post<Contact>("https://mysoleil.herokuapp.com/contacts", contact);
   }
 
 
 
   ajouterProjet(projet: Projet): Observable<Contact> {
     console.log(projet);
-    return this.http.post<Contact>("http://localhost:8081/projets", projet);
+    return this.http.post<Contact>("https://mysoleil.herokuapp.com/projets", projet);
   }
 
 
 
   recupererLogin(){
-    return this.http.get("http://localhost:8081/admins");
+    return this.http.get("https://mysoleil.herokuapp.com/admins");
   }
 
   afficheProjet(id: string) {
-    console.log("http://localhost:8081/projets/search/selectedProjetType?type="+id);
-    return this.http.get("http://localhost:8081/projets/search/selectedProjetType?type="+id);
+    console.log("https://mysoleil.herokuapp.com/projets/search/selectedProjetType?type="+id);
+    return this.http.get("https://mysoleil.herokuapp.com/projets/search/selectedProjetType?type="+id);
   }
 
 

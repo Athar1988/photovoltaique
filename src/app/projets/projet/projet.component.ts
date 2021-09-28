@@ -36,7 +36,6 @@ export class ProjetComponent implements OnInit {
         console.log(data+ "liste projet")
         this.listeProjet=data;
         this.tousLesProjet=this.listeProjet._embedded.projets;
-        console.log(data + " ggggg")
         for(let i=0 ; i< this.tousLesProjet.length; i++) {
           console.log(this.tousLesProjet[i] + " ppppt")
         }
