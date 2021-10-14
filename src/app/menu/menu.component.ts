@@ -21,7 +21,6 @@ token;
   }
 
   Projets(projet: string) {
-    console.log(projet);
     this.serviceProduit.projets(projet);
   }
 }
