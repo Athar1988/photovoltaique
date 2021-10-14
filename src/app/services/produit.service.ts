@@ -30,9 +30,9 @@ export class ProduitService {
 
 
 
-  ajouterProjet(projet: Projet): Observable<Contact> {
+  ajouterProjet(projet: Projet): Observable<Projet> {
     console.log(projet);
-    return this.http.post<Contact>("https://mysoleil.herokuapp.com/projets", projet);
+    return this.http.post<Projet>("https://mysoleil.herokuapp.com/projets", projet);
   }
 
 
