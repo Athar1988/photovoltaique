@@ -3,6 +3,7 @@ import {Projet} from '../../Model/Projet';
 import {ProduitService} from '../../services/produit.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
+import {HttpClient, HttpEventType} from '@angular/common/http';
 
 @Component({
   selector: 'app-ajoute-projet-admin',
@@ -17,14 +18,27 @@ export class AjouteProjetAdminComponent implements OnInit {
     image:'';
     description:''
     admin=true;
-  constructor(private service: ProduitService, private toaster: ToastrService,
+
+
+
+  selectedFile: File;
+  retrievedImage: any;
+  base64Data: any;
+  retrieveResonse: any;
+  message: string;
+  imageName: any;
+
+
+
+
+constructor(private service: ProduitService, private toaster: ToastrService,
               private router: Router) { }
 
   ngOnInit(): void {
   }
 
   ajoutSiasir(projet :Projet){
-    projet.image=this.image;
+
     this.service.ajouterProjet(projet).subscribe(
       data=>{
         console.log("projet ajouter avec succés");
@@ -54,5 +68,15 @@ export class AjouteProjetAdminComponent implements OnInit {
       }
     }
   }
+
+
+  /*********************
+   * *************
+   *
+******/
+
+
+
+
 
 }

@@ -24,6 +24,7 @@ import { LoginComponent } from './admin/login/login.component';
 import {NgSelect2Module} from 'ng-select2';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DetailprojetComponent } from './projets/detailprojet/detailprojet.component';
+import { Nf404Component } from './nf404/nf404.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DetailprojetComponent } from './projets/detailprojet/detailprojet.compo
     ProjetComponent,
     AjouteProjetAdminComponent,
     LoginComponent,
-    DetailprojetComponent
+    DetailprojetComponent,
+    Nf404Component
   ],
   imports: [
     BrowserModule,

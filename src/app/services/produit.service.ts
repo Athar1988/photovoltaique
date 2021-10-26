@@ -50,5 +50,15 @@ export class ProduitService {
   isAuthenticated(): boolean {
     return !!localStorage.getItem('token');
   }
+
+  supprimerProjet(id){
+    console.log(id._links.projet.href);
+    return this.http.delete(id._links.projet.href);
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+  }
+
 }
 

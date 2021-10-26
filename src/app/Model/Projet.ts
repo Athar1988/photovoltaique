@@ -4,7 +4,6 @@ export class Projet {
     public  id='',
     public  type='',
     public  titre='',
-    public  image='',
     public  description='',
   ){}
 }

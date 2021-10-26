@@ -10,9 +10,6 @@
           <form #projetForm="ngForm" id="commentForm" class="cmxform" method="post" novalidate="novalidate">
             <fieldset>
               <div class="form-group">
-
-
-
                 <div class="input-group" for="type">
                   <label class="label">Choisir un saisir</label>
                   <div class="rs-select2 js-select-simple select--no-search">
@@ -82,20 +79,6 @@
                   >
              </textarea>
                 </div>
-
-                <div>
-                  <label for="image">Image</label>
-                  <img
-                    [(ngModel)]="image"
-                    #imageInput="ngModel"
-                    required
-                    ngModel
-                    id="image"
-                    [src]="url" height="200"> <br/>
-                  <input type='file' (change)="onSelectFile($event)">
-
-                </div>
-
                 <input
                   (click)=" ajoutSiasir(projetForm.value)"
                   [disabled]="projetForm.invalid"
@@ -107,13 +90,10 @@
               </div>
             </fieldset>
           </form>
+
         </div>
 
       </div>
     </div>
   </div>
 </div>
-
-
-
-

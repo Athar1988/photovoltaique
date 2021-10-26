@@ -9,7 +9,7 @@ import {ProduitService} from '../services/produit.service';
 })
 export class MenuComponent implements OnInit {
 token;
-  constructor(private router: Router, private serviceProduit: ProduitService) { }
+  constructor(private router: Router, public serviceProduit: ProduitService) { }
 
   ngOnInit(): void {
     this.token=localStorage.getItem('token');
@@ -22,5 +22,10 @@ token;
 
   Projets(projet: string) {
     this.serviceProduit.projets(projet);
+  }
+
+  logout(): void {
+    this.serviceProduit.logout();
+    this.router.navigate(['admin']);
   }
 }

@@ -1,30 +1,58 @@
-<div class="container" >
+<div class="container-sm" >
   <div class="row">
-    <div class="col-md-sm-lg-3 ">
-      <img src="assets/image/post_img_small.jpg" alt="" class="img-responsive frame" height="350px">
-    </div>
 
-  <div class="col-md-9 col-sm-9">
-    <h3 class="section_title">{{tousLesProjet[0].type}}</h3>
+
+  <div class="col-md-12 col-sm-12">
+    <h3 class="section_title">{{id}}</h3>
     <div class="titleline"></div>
 
-  <div class="card-group vgr-cards">
-    <div  *ngFor="let projet of tousLesProjet">
-      <div class="card">
-        <div class="card-img-body">
-          <img class="card-img" src="assets/projet/{{projet.image}}" alt="Card image cap" >
-        </div>
-        <div class="card-body">
-          <h4 class="card-title">{{projet.titre}}</h4>
-          <p class="card-text">{{projet.description}}</p>
-          <button class="btn mb-3 mr-3 btn-warning" *ngIf="token!= null"><span>Supprimer</span></button>
-        </div>
-      </div>
-      <div> <br></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead class="thead-primary">
+        <tr>
+          <th>Titre</th>
+          <th>Description</th>
+          <th *ngIf="token!= null" >Modifier Image</th>
+          <th>Image</th>
+          <th *ngIf="token!= null" >Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="alert" role="alert"  *ngFor="let projet of tousLesProjet">
+
+          <td>
+            <div>{{projet.titre}}</div>
+          </td>
+          <td>
+            <div>
+              <span>{{projet.description}} </span>
+            </div>
+          </td>
+          <td *ngIf="token!= null" > <input type="file" (change)="onFileChanged($event)" *ngIf="token!= null">
+            <input type="button" (click)="onUpload()" value="upload" *ngIf="token!= null">
+          </td>
+
+          <td>
+
+           <!-- <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName" name="name" />
+            <input type="button" (click)="getImage()" value="Get Image">
+              <div *ngIf=retrievedImage>
+                <img [src]="retrievedImage">-->
+            <div><img src="assets/image/projet.jpg" alt="solar word" class="responsive" > </div>
+            <div *ngIf=retrievedImage><img [src]="retrievedImage"></div>
+             <!-- </div>-->
+          </td>
+
+          <td>
+            <button *ngIf="token!= null" type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="supprimerProjet(projet)">
+              <span aria-hidden="true"><i class="fa fa-close"></i></span>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
+
   </div>
 </div>
 </div>
-
-

@@ -14,6 +14,7 @@ import {LoginComponent} from './admin/login/login.component';
 import {AjouteProjetAdminComponent} from './projets/ajoute-projet-admin/ajoute-projet-admin.component';
 import {AithguardGuard} from './aithguard.guard';
 import {DetailprojetComponent} from './projets/detailprojet/detailprojet.component';
+import {Nf404Component} from './nf404/nf404.component';
 
 const routes: Routes = [
   {path:'' , component:AccueilComponent},
@@ -38,6 +39,8 @@ const routes: Routes = [
   {path:"admin" , component:LoginComponent},
 
   {path:"projets/:id/:id2" , component:ProjetComponent},
+
+  { path: '**', component: Nf404Component },
 ];
 
 @NgModule({
