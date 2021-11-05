@@ -8,17 +8,19 @@ import {Projet} from '../Model/Projet';
   providedIn: 'root'
 })
 export class ProduitService {
+
+
   constructor(private router: Router, private http: HttpClient) { }
 
 
   produits(produit: string) {
-    this.router.navigate(['/produits/'+produit]);
+    this.router.navigate(['produits/'+produit]);
   }
 
 
   projets(projet: string) {
     console.log(projet);
-    this.router.navigate(['/projets/'+projet]);
+    this.router.navigate(['projets/'+projet]);
     console.log('/projets/'+projet);
   }
 
@@ -38,6 +40,7 @@ export class ProduitService {
 
 
   recupererLogin(){
+    console.log("https://mysoleil.herokuapp.com/admins");
     return this.http.get("https://mysoleil.herokuapp.com/admins");
   }
 

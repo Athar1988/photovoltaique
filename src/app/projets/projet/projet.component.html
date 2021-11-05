@@ -23,13 +23,14 @@
           <td>
             <div>{{projet.titre}}</div>
           </td>
+
           <td>
             <div>
               <span>{{projet.description}} </span>
             </div>
           </td>
           <td *ngIf="token!= null" > <input type="file" (change)="onFileChanged($event)" *ngIf="token!= null">
-            <input type="button" (click)="onUpload()" value="upload" *ngIf="token!= null">
+            <input type="button" (click)="onUpload(projet._links.projet.href.substr(30))" value="upload" *ngIf="token!= null">
           </td>
 
           <td>

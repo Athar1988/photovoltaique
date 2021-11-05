@@ -20,17 +20,6 @@ export class AjouteProjetAdminComponent implements OnInit {
     admin=true;
 
 
-
-  selectedFile: File;
-  retrievedImage: any;
-  base64Data: any;
-  retrieveResonse: any;
-  message: string;
-  imageName: any;
-
-
-
-
 constructor(private service: ProduitService, private toaster: ToastrService,
               private router: Router) { }
 
@@ -53,30 +42,5 @@ constructor(private service: ProduitService, private toaster: ToastrService,
     }
     )
   }
-
-
-  onSelectFile(event) { // called each time file input changes
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
-      console.log(event.target.files[0].name);
-      this.image=event.target.files[0].name;
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
-      console.log(event.target.files[0]);
-      reader.onload = (event) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
-
-      }
-    }
-  }
-
-
-  /*********************
-   * *************
-   *
-******/
-
-
-
-
 
 }

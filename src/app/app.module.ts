@@ -13,7 +13,6 @@ import { OnduleursComponent } from './produits/onduleurs/onduleurs.component';
 import { RegulateurComponent } from './produits/regulateur/regulateur.component';
 import { PompesComponent } from './produits/pompes/pompes.component';
 import { LampesComponent } from './produits/lampes/lampes.component';
-import { ProduitsComponent } from './produits/produits.component';
 import { BatteriesComponent } from './produits/batteries/batteries.component';
 import { BoutonsComponent } from './produits/boutons/boutons.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -39,7 +38,6 @@ import { ErrorComponent } from './error/error.component';
     RegulateurComponent,
     PompesComponent,
     LampesComponent,
-    ProduitsComponent,
     BatteriesComponent,
     BoutonsComponent,
     ProjetComponent,

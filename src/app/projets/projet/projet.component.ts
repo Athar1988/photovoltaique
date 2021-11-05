@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ProduitService} from '../../services/produit.service';
 import {HttpClient} from '@angular/common/http';
+import {Projet} from '../../Model/Projet';
 
 @Component({
   selector: 'app-projet',
@@ -71,14 +72,15 @@ export class ProjetComponent implements OnInit {
   }
 
   //Gets called when the user clicks on submit to upload the image
-  onUpload() {
+  onUpload(id) {
+    console.log(id+" rrrrr");
     console.log(this.selectedFile.name);
     //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
     const uploadImageData = new FormData();
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
     //Make a call to the Spring Boot Application to save the image
     console.log("modoficaton");
-    this.httpClient.post('https://mysoleil.herokuapp.com/image/upload', uploadImageData, { observe: 'response' })
+    this.httpClient.post('https://mysoleil.herokuapp.com/imageModels'+id, uploadImageData, { observe: 'response' })
       .subscribe((response) => {
           if (response.status === 200) {
             this.message = 'Image uploaded successfully';
@@ -87,12 +89,12 @@ export class ProjetComponent implements OnInit {
           }
         }
       );
-    this.getImage(this.selectedFile.name);
+    this.getImage(id+".jpg");
   }
   //Gets called when the user clicks on retieve image button to get the image from back end
   getImage(imageName) {
     //Make a call to Sprinf Boot to get the Image Bytes.
-    this.httpClient.get('https://mysoleil.herokuapp.com/image/get/' + imageName)
+    this.httpClient.get('https://mysoleil.herokuapp.com/get' + imageName)
       .subscribe(
         res => {
           this.retrieveResonse = res;
