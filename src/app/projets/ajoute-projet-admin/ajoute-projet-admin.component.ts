@@ -27,7 +27,6 @@ constructor(private service: ProduitService, private toaster: ToastrService,
   }
 
   ajoutSiasir(projet :Projet){
-
     this.service.ajouterProjet(projet).subscribe(
       data=>{
         console.log("projet ajouter avec succés");

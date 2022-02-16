@@ -10,7 +10,6 @@ import {Router} from '@angular/router';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  newcontact: Contact;
   nom='';
   message='';
   objet='';
@@ -24,7 +23,6 @@ export class ContactComponent implements OnInit {
 
 
   ajoutContact(contact: Contact) {
-    //this.newcontact= new Contact(contact.nom,contact.email,contact.objet,contact.message);
     this.service.ajouterContact(contact).subscribe(
     data=>{
       console.log("contact ajouter avec succés");

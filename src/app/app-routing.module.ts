@@ -13,7 +13,6 @@ import {ProjetComponent} from './projets/projet/projet.component';
 import {LoginComponent} from './admin/login/login.component';
 import {AjouteProjetAdminComponent} from './projets/ajoute-projet-admin/ajoute-projet-admin.component';
 import {AithguardGuard} from './aithguard.guard';
-import {DetailprojetComponent} from './projets/detailprojet/detailprojet.component';
 import {ErrorComponent} from './error/error.component';
 
 const routes: Routes = [
@@ -31,7 +30,6 @@ const routes: Routes = [
   {path:"produits/pompes" , component:PompesComponent},
   {path:"produits/regulateur" , component:RegulateurComponent},
   {path:"projets/:id" , component:ProjetComponent},
-  {path:"details/:id" , component:DetailprojetComponent},
 
 
   {path:"contact" , component:ContactComponent},

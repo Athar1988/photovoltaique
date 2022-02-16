@@ -22,7 +22,6 @@ import { AjouteProjetAdminComponent } from './projets/ajoute-projet-admin/ajoute
 import { LoginComponent } from './admin/login/login.component';
 import {NgSelect2Module} from 'ng-select2';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DetailprojetComponent } from './projets/detailprojet/detailprojet.component';
 import { ErrorComponent } from './error/error.component';
 
 @NgModule({
@@ -43,7 +42,6 @@ import { ErrorComponent } from './error/error.component';
     ProjetComponent,
     AjouteProjetAdminComponent,
     LoginComponent,
-    DetailprojetComponent,
     ErrorComponent
   ],
   imports: [

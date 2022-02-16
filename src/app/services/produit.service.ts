@@ -9,7 +9,8 @@ import {Projet} from '../Model/Projet';
 })
 export class ProduitService {
 
-
+  //host="http://localhost:8080/";
+  host="https://mysoleil.herokuapp.com/";
   constructor(private router: Router, private http: HttpClient) { }
 
 
@@ -19,34 +20,28 @@ export class ProduitService {
 
 
   projets(projet: string) {
-    console.log(projet);
     this.router.navigate(['projets/'+projet]);
-    console.log('/projets/'+projet);
   }
 
 
   ajouterContact(contact: Contact): Observable<Contact> {
-    console.log(contact);
-    return this.http.post<Contact>("https://mysoleil.herokuapp.com/contacts", contact);
+    return this.http.post<Contact>(this.host+"contacts", contact);
   }
 
 
 
   ajouterProjet(projet: Projet): Observable<Projet> {
-    console.log(projet);
-    return this.http.post<Projet>("https://mysoleil.herokuapp.com/projets", projet);
+    return this.http.post<Projet>(this.host+"projets", projet);
   }
 
 
 
   recupererLogin(){
-    console.log("https://mysoleil.herokuapp.com/admins");
-    return this.http.get("https://mysoleil.herokuapp.com/admins");
+    return this.http.get(this.host+"admins");
   }
 
   afficheProjet(id: string) {
-    console.log("https://mysoleil.herokuapp.com/projets/search/selectedProjetType?type="+id);
-    return this.http.get("https://mysoleil.herokuapp.com/projets/search/selectedProjetType?type="+id);
+    return this.http.get(this.host+"projets/search/selectedProjetType?type="+id);
   }
 
 
@@ -55,7 +50,6 @@ export class ProduitService {
   }
 
   supprimerProjet(id){
-    console.log(id._links.projet.href);
     return this.http.delete(id._links.projet.href);
   }
 

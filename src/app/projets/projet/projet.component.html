@@ -1,59 +1,81 @@
-<div class="container-sm" >
+
+
+<div class="container">
   <div class="row">
-
-
-  <div class="col-md-12 col-sm-12">
-    <h3 class="section_title">{{id}}</h3>
-    <div class="titleline"></div>
-
-    <div class="table-wrap">
-      <table class="table">
-        <thead class="thead-primary">
-        <tr>
-          <th>Titre</th>
-          <th>Description</th>
-          <th *ngIf="token!= null" >Modifier Image</th>
-          <th>Image</th>
-          <th *ngIf="token!= null" >Supprimer</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="alert" role="alert"  *ngFor="let projet of tousLesProjet">
-
-          <td>
-            <div>{{projet.titre}}</div>
-          </td>
-
-          <td>
-            <div>
-              <span>{{projet.description}} </span>
+    <div class="col-sm-12 col-xs-12">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-5 col-xs-12">
+              <h4 class="title">{{id}}</h4>
             </div>
-          </td>
-          <td *ngIf="token!= null" > <input type="file" (change)="onFileChanged($event)" *ngIf="token!= null">
-            <input type="button" (click)="onUpload(projet._links.projet.href.substr(30))" value="upload" *ngIf="token!= null">
-          </td>
+          </div>
+        </div>
+        <div class="panel-body table-responsive">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Ref</th>
+              <th>Titre</th>
+              <th>Description</th>
+              <th *ngIf="token!= null" >Modifier Image</th>
+              <th>Image</th>
+              <th *ngIf="token!= null" >Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
 
-          <td>
+            <tr *ngFor="let projet of listeProjet._embedded.projets">
+              <td>
+                <div>{{projet.id}}</div>
+              </td>
+              <td>
+                <div>{{projet.titre}}</div>
+              </td>
+              <td>
+                <div>
+                  <span>{{projet.description}} </span>
+                </div>
+              </td>
+              <td *ngIf="token!= null" >
+                <input type="file" (change)="onFileChanged($event)" *ngIf="token!= null">
+                <input type="button" (click)="onUpload(projet.id)" value="Modifier" *ngIf="token!= null">
+              </td>
+              <td>
+                <div class="user_icon">
+                  <img src="data:image/jpeg;base64,{{projet.picByte}}" alt="">
+                </div>
+              </td>
+              <td *ngIf="token!= null">
+                <button  type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="supprimerProjet(projet)">
+                  <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                </button>
+              </td>
+            </tr>
 
-           <!-- <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName" name="name" />
-            <input type="button" (click)="getImage()" value="Get Image">
-              <div *ngIf=retrievedImage>
-                <img [src]="retrievedImage">-->
-            <div><img src="assets/image/projet.jpg" alt="solar word" class="responsive" > </div>
-            <div *ngIf=retrievedImage><img [src]="retrievedImage"></div>
-             <!-- </div>-->
-          </td>
-
-          <td>
-            <button *ngIf="token!= null" type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="supprimerProjet(projet)">
-              <span aria-hidden="true"><i class="fa fa-close"></i></span>
-            </button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+            </tbody>
+          </table>
+        </div>
+       <!-- <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-12">
+              <ul class="pagination hidden-xs">
+                <li><a href="#">Prev</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">Next</a></li>
+              </ul>
+              <ul class="pagination visible-xs">
+                <li><a href="#"><</a></li>
+                <li><a href="#">></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>-->
+      </div>
     </div>
-
   </div>
-</div>
 </div>
