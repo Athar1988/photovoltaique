@@ -46,11 +46,19 @@
           <div class="w-100">
           </div>
           <div class="w-100 d-flex justify-content-end">
-            <button
+
+
+
+
+
+            <input
               (click)=" connecter(loginForm.value)"
               [disabled]="loginForm.invalid"
+              class="submit btn btn-white"
+              name="submit"
               type="submit"
-              class="btn btn-primary rounded submit">Login</button>
+              value="Login"
+            >
           </div>
         </div>
       </form>
