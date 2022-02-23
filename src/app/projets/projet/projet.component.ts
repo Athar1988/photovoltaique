@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 import {ProduitService} from '../../services/produit.service';
 import {HttpClient} from '@angular/common/http';
-import {Projet} from '../../Model/Projet';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-projet',
