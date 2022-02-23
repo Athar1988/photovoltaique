@@ -28,3 +28,6 @@ img {
   padding-left: 15px;
 }
 
+a, ul{
+  cursor: pointer;
+}

@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
           if (this.admin._embedded.admins[i].login == credentials.login && this.admin._embedded.admins[i].motdepasse == credentials.motdepasse) {
             console.log(this.admin._embedded.admins[i]);
             localStorage.setItem('token', this.admin._embedded.admins[i].login);
-            this.router.navigate(['/ajouteProjet']);
+            this.router.navigate(['/ajouteProjet/0']);
           }
         }
       console.log(this.admin)},

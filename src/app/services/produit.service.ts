@@ -40,6 +40,10 @@ export class ProduitService {
     return this.http.get(this.host+"admins");
   }
 
+  recupereProjet(id){
+    return this.http.get(this.host+"projets/"+id);
+  }
+
   afficheProjet(id: string) {
     return this.http.get(this.host+"projets/search/selectedProjetType?type="+id);
   }
@@ -57,5 +61,9 @@ export class ProduitService {
     localStorage.removeItem('token');
   }
 
+  modifierProjet(idprojet: any, projet: any): Observable<Projet> {
+    console.log(projet);
+    return this.http.post<Projet>(this.host+"projets/misejour/"+idprojet, projet);
+  }
 }
 

@@ -17,7 +17,7 @@ export class ProjetComponent implements OnInit {
   listeProjet: any;
 
   host="https://mysoleil.herokuapp.com/";
-  //host="http://localhost:8080/";
+ // host="http://localhost:8080/";
   selectedFile: File;
 
   constructor(private router:Router, private route:ActivatedRoute, private service: ProduitService, private httpClient: HttpClient) { }
@@ -78,4 +78,7 @@ export class ProjetComponent implements OnInit {
   }
 
 
+  modifierProjet(idProjet) {
+    this.router.navigateByUrl('ajouteProjet/'+idProjet);
+  }
 }

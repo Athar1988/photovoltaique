@@ -52,7 +52,8 @@ import { ErrorComponent } from './error/error.component';
     HttpClientModule,
     ToastrModule.forRoot(),
     NgSelect2Module,
-    FontAwesomeModule
+    FontAwesomeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

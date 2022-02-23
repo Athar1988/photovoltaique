@@ -18,8 +18,9 @@
               <th>Ref</th>
               <th>Titre</th>
               <th>Description</th>
-              <th *ngIf="token!= null" >Modifier Image</th>
               <th>Image</th>
+              <th *ngIf="token!= null" >Modifier Image</th>
+              <th *ngIf="token!= null" >Modifier</th>
               <th *ngIf="token!= null" >Supprimer</th>
             </tr>
             </thead>
@@ -37,14 +38,19 @@
                   <span>{{projet.description}} </span>
                 </div>
               </td>
+              <td>
+                <div class="user_icon">
+                  <img src="data:image/jpeg;base64,{{projet.picByte}}"  alt="">
+                </div>
+              </td>
               <td *ngIf="token!= null" >
                 <input type="file" (change)="onFileChanged($event)" *ngIf="token!= null">
                 <input type="button" (click)="onUpload(projet.id)" value="Modifier" *ngIf="token!= null">
               </td>
-              <td>
-                <div class="user_icon">
-                  <img src="data:image/jpeg;base64,{{projet.picByte}}" alt="">
-                </div>
+              <td *ngIf="token!= null">
+                <button  type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="modifierProjet(projet.id)">
+                  <span aria-hidden="true"><i class="fa fa-wrench"></i></span>
+                </button>
               </td>
               <td *ngIf="token!= null">
                 <button  type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="supprimerProjet(projet)">

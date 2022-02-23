@@ -1,9 +1,9 @@
 
 
-<div class="container">
+<div class="container" *ngIf="ajoute==true">
   <div class="row">
     <div class="col-md-12 text-justify">
-      <h3 class="section_title">  Ajouter service ou projet</h3>
+      <h3 class="section_title">  Ajouter un projet</h3>
       <div class="titleline"></div>
       <div class="col-md-12 col-sm-12">
         <div>
@@ -81,9 +81,122 @@
                   >
              </textarea>
                 </div>
+            <!--    <div>
+                  <input type="file" (change)="onFileChanged($event)" >
+                </div>
+-->
+
                 <input
                   (click)=" ajoutSiasir(projetForm.value)"
                   [disabled]="projetForm.invalid"
+                  class="submit btn btn-white"
+                  name="submit"
+                  type="submit"
+                  value="Envoyer"
+                >
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container" *ngIf="ajoute==false">
+  <div class="row">
+    <div class="col-md-12 text-justify">
+      <h3 class="section_title">  Modifier un projet</h3>
+      <div class="titleline"></div>
+      <div class="col-md-12 col-sm-12">
+        <div>
+          <form #projetModifierForm="ngForm" id="commentForm1" class="cmxform" method="post" novalidate="novalidate">
+            <fieldset>
+              <div class="form-group">
+
+
+                <div class="input-group" for="type">
+                  <div>
+                    <label class="label">Choisir un saisir</label>
+                    <select
+                      [(ngModel)]="projet.type"
+                      class="form-control"
+                      id="type1"
+                      #typeInput
+                      name="type"
+                      placeholder="choisir un saisir"
+                      required
+                      ngModel>
+                      <option disabled="disabled" selected="selected">choisir saisir</option>
+                      <option>Industriel</option>
+                      <option >Résidentiel</option>
+                      <option >Pompage Solaire</option>
+                      <option >Eclairage public</option>
+                      <option>Parking Solaire</option>
+                      <option  >Site Isolé</option>
+                    </select>
+                    <div class="select-dropdown"></div>
+                  </div>
+                </div>
+
+
+
+                <div>
+                  <label for="titre">Titre</label>
+                  <input
+                    [(ngModel)]="projet.titre"
+                    type="text"
+                    #titreInput="ngModel"
+                    required
+                    ngModel
+                    id="titre1"
+                    name="titre"
+                    minlength="3"
+                    type="text"
+                    class="form-control"
+                    placeholder="titre"
+                    required=""
+                    aria-required="true"
+                  >
+                  <div
+                    *ngIf="titreInput.invalid && titreInput.dirty"
+                    class="alert alert-danger"
+                  >
+                    champs obligatoire et au moins 3 caractéres
+                  </div>
+                </div>
+
+
+
+                <div>
+                  <label for="description">Description</label>
+                  <textarea
+                    [(ngModel)]="projet.description"
+                    type="text"
+                    #descriptionInput="ngModel"
+                    required
+                    ngModel
+                    class="form-control"
+                    name="description"
+                    id="description1"
+                    rows="3"
+                    placeholder="description"
+                  >
+             </textarea>
+                </div>
+                <input
+                  (click)=" ModifierSiasir(projetModifierForm.value)"
+                  [disabled]="projetModifierForm.invalid"
                   class="submit btn btn-white"
                   name="submit"
                   type="submit"

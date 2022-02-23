@@ -33,7 +33,8 @@ const routes: Routes = [
 
 
   {path:"contact" , component:ContactComponent},
-  {path:"ajouteProjet" ,  canActivate: [AithguardGuard],component:AjouteProjetAdminComponent},
+  {path:"ajouteProjet/:id" ,  canActivate: [AithguardGuard],component:AjouteProjetAdminComponent},
+
   {path:"admin" , component:LoginComponent},
 
   {path:"projets/:id/:id2" , component:ProjetComponent},

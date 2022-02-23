@@ -46,7 +46,7 @@
 
 
         <li class="nav-item" routerLinkActive="active"><a [routerLink]="['contact']" class="nav-link">Contact</a></li>
-        <li class="nav-item" routerLinkActive="active" *ngIf="token!= null"><a *ngIf="token!= null" [routerLink]="['ajouteProjet']" class="nav-link">Ajouter projet</a></li>
+        <li class="nav-item" routerLinkActive="active" *ngIf="token!= null"><a *ngIf="token!= null" [routerLink]="['ajouteProjet/0']" class="nav-link">Ajouter projet</a></li>
         <li
           *ngIf="serviceProduit.isAuthenticated()"
           class="nav-item">
