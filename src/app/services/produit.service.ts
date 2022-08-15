@@ -9,7 +9,7 @@ import {Projet} from '../Model/Projet';
 })
 export class ProduitService {
 
-  //host="http://localhost:8080/";
+  //host="http://localhost:8081/";
   host="https://mysoleil.herokuapp.com/";
   constructor(private router: Router, private http: HttpClient) { }
 
